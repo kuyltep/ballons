@@ -1,0 +1,58 @@
+body
+  font-family: "Roboto"
+  font-weight: 400
+  color: $color-gray
+  font-size: $font-size-paragraph
+  letter-spacing: 0.2rem
+.title-first
+  color: $color-white
+  margin-bottom: 6.5rem
+  span
+    display: block
+  &__main
+    font-size: 5rem
+    line-height: 6rem
+    letter-spacing: 1rem
+    text-transform: uppercase
+    margin-bottom: 1rem
+    font-weight: 900
+    animation-name: LeftToRight
+    animation-duration: 2s
+    animation-delay: 1s
+    backface-visibility: hidden
+  &__second
+    font-size: 4rem
+    line-height: 4.8rem
+    letter-spacing: 0.5rem
+    font-weight: 300
+    animation-name: RightToLeft
+    animation-duration: 2s
+    animation-delay: 1s
+    backface-visibility: hidden
+
+.title-second
+  text-align: center
+  font-weight: 800
+  font-size: $font-size-h2
+  line-height: 4.3rem
+  letter-spacing: 1rem
+  text-transform: uppercase
+  color: $color-brown-light
+  transition: all .4s
+  backface-visibility: hidden
+  &:hover
+    transform: skewY(2deg) skewX(15deg) scale(1.1)
+    text-shadow: $box-shadow
+
+.title-third
+  font-weight: 700
+  font-size: $font-size-h3
+  line-height: 2.4rem
+  letter-spacing: .2rem
+  text-transform: uppercase
+
+.paragraph
+  font-weight: 400
+  font-size: $font-size-paragraph
+  line-height: 2.2rem
+  letter-spacing: .2rem
