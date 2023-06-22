@@ -78,7 +78,9 @@ body {
   line-height: 4.3rem;
   letter-spacing: 1rem;
   text-transform: uppercase;
-  color: #BA8554;
+  background: linear-gradient(90deg, #BA8554 3.65%, #A14F03 100%);
+  -webkit-background-clip: text;
+  color: transparent;
   transition: all 0.4s;
   backface-visibility: hidden; }
   .title-second:hover {
@@ -101,11 +103,14 @@ body {
 .mb-8rem {
   margin-bottom: 8rem; }
 
-.mb-1rem {
-  margin-bottom: 1rem; }
-
 .mb-3rem {
   margin-bottom: 3rem; }
+
+.mb-2rem {
+  margin-bottom: 2rem; }
+
+.mb-1rem {
+  margin-bottom: 1rem; }
 
 .btn:link, .btn:visited {
   display: inline-block;
@@ -193,6 +198,49 @@ body {
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.9); }
 
+.adventure-card {
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: all 0.3s; }
+  .adventure-card:hover {
+    transform: translateY(-1rem) scale(1.05); }
+  .adventure-card__img {
+    width: 62px;
+    height: 62px; }
+
+.card-tour {
+  height: 52rem;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  border-radius: 0.3rem; }
+  .card-tour__img {
+    height: 20rem;
+    background: #BA8554 url("../img/tour-card1.jpg") center/cover no-repeat;
+    background-blend-mode: hard-light; }
+  .card-tour__side {
+    height: 52rem;
+    width: 100%;
+    transition: all 0.6s ease-out;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden; }
+    .card-tour__side_front {
+      background: #FFFFFF; }
+    .card-tour__side_back {
+      background: linear-gradient(156.85deg, #BA8554 3.65%, #A14F03 100%);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 15px 40px rgba(0, 0, 0, 0.15);
+      transform: rotateY(180deg); }
+  .card-tour:hover .card-tour__side_front {
+    transform: rotateY(-180deg); }
+  .card-tour:hover .card-tour__side_back {
+    transform: rotateY(0deg); }
+
 .header {
   position: relative;
   height: 95vh;
@@ -246,6 +294,14 @@ body {
     margin-right: 6rem; }
 
 .section-about {
+  padding-top: 8rem; }
+
+.section-adventure {
+  padding: 21rem 0;
+  background: linear-gradient(91.4deg, rgba(186, 133, 84, 0.7) 16.34%, rgba(0, 0, 0, 0.7) 98.8%), url("../img/adventure background.jpg") center/cover no-repeat;
+  clip-path: polygon(0 10%, 100% 20%, 100% 100%, 0 90%); }
+
+.section-tour {
   padding-top: 8rem; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,31 @@
+.card-tour
+  height: 52rem
+  perspective: 150rem
+  -moz-perspective: 150rem
+  position: relative
+  border-radius: 0.3rem
+  &__img
+    height: 20rem
+    background: $color-brown-light url('../img/tour-card1.jpg') center/cover no-repeat
+    background-blend-mode: hard-light
+  &__title
+  &__desc
+  &__side
+    height: 52rem
+    width: 100%
+    transition: all .6s ease-out
+    color: white
+    position: absolute
+    top: 0
+    left: 0
+    backface-visibility: hidden
+    &_front
+      background: #FFFFFF
+    &_back
+      background: linear-gradient(156.85deg, $color-brown-light 3.65%, $color-brown-dark 100%)
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 15px 40px rgba(0, 0, 0, 0.15)
+      transform: rotateY(180deg)
+  &:hover &__side_front
+    transform: rotateY(-180deg)
+  &:hover &__side_back
+    transform: rotateY(0deg)
