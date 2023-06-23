@@ -43,7 +43,10 @@ body
   transition: all .4s
   backface-visibility: hidden
   text-shadow: $box-shadow
-
+  position: relative
+  z-index: 5
+  &_form
+    text-align: left
   &:hover
     transform: skewY(2deg) skewX(15deg) scale(1.1)
   &_white
