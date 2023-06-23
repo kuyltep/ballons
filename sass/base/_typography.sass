@@ -42,10 +42,12 @@ body
   color: transparent
   transition: all .4s
   backface-visibility: hidden
+  text-shadow: $box-shadow
+
   &:hover
     transform: skewY(2deg) skewX(15deg) scale(1.1)
-    text-shadow: $box-shadow
-
+  &_white
+    color: $color-white
 .title-third
   font-weight: 700
   font-size: $font-size-h3
