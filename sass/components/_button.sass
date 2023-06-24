@@ -1,5 +1,5 @@
 .btn
-  &:link, &:visited
+  &, &:link, &:visited
     @include style-link
     font-weight: 600
     font-size: 2rem
@@ -13,12 +13,22 @@
     backface-visibility: hidden
     z-index: 5
     box-shadow: $box-shadow
+    border: none
+  &_form
+    &, &:link, &:visited
+      background-color: $color-brown-dark
+      color: $color-white
+      &:hover
+        transform: translateY(-0.4rem)
+        box-shadow: $box-shadow
+      &::after
+        background-color: $color-brown-dark
   &:hover
     transform: translateY(-0.4rem)
     box-shadow: $box-shadow
-    &::after
-      opacity: 0
-      transform: scale(1.5, 1.7)
+  &::after
+    opacity: 0
+    transform: scale(1.5, 1.7)
   &:active
     transform: translateY(-0.2rem)
   &::after

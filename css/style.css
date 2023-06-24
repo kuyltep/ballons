@@ -126,7 +126,7 @@ body {
 .text-align-center {
   text-align: center; }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   color: #777777;
@@ -142,13 +142,22 @@ body {
   position: relative;
   backface-visibility: hidden;
   z-index: 5;
-  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3); }
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
+  border: none; }
+.btn_form, .btn_form:link, .btn_form:visited {
+  background-color: #A14F03;
+  color: #FAFAFA; }
+  .btn_form:hover, .btn_form:link:hover, .btn_form:visited:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3); }
+  .btn_form::after, .btn_form:link::after, .btn_form:visited::after {
+    background-color: #A14F03; }
 .btn:hover {
   transform: translateY(-0.4rem);
   box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3); }
-  .btn:hover::after {
-    opacity: 0;
-    transform: scale(1.5, 1.7); }
+.btn::after {
+  opacity: 0;
+  transform: scale(1.5, 1.7); }
 .btn:active {
   transform: translateY(-0.2rem); }
 .btn::after {
@@ -384,7 +393,9 @@ body {
 .form {
   padding: 5rem 0 5rem 5rem; }
   .form__group:not(:last-child) {
-    margin-bottom: 5rem; }
+    margin-bottom: 2rem; }
+  .form__group:nth-child(4) {
+    margin-bottom: 4rem; }
   .form__input {
     font-weight: 400;
     font-size: 1.6rem;
@@ -398,6 +409,16 @@ body {
     border-radius: 0.5rem;
     width: 30%;
     margin-bottom: 1rem; }
+    .form__input:focus {
+      outline: none;
+      border-bottom: 0.2rem solid #66D763;
+      box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3); }
+    .form__input:focus:invalid {
+      border-bottom: 0.2rem solid #D76363; }
+  .form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3rem); }
   .form__label {
     font-weight: 400;
     font-size: 1.6rem;
@@ -405,16 +426,39 @@ body {
     letter-spacing: 0.2rem;
     display: block;
     transition: all 0.5s; }
-    .form__label:focus {
-      outline: none;
-      border-bottom: 0.2rem solid #66D763;
-      box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3); }
-    .form__label:focus:invalid {
-      border-bottom: 0.2rem solid #D76363; }
-  .form__input:placeholder-shown + .form__label {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-3rem); }
+  .form__input-radio {
+    display: none; }
+  .form__group-radio {
+    width: 25%;
+    display: inline-block; }
+  .form__label-radio {
+    position: relative;
+    cursor: pointer;
+    padding-left: 1rem; }
+  .form__button-radio {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: 0.5rem solid #A14F03;
+    display: block;
+    position: absolute;
+    left: -3rem;
+    top: -0.5rem; }
+    .form__button-radio::after {
+      content: "";
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background: #A14F03;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: 0.2s all; }
+  .form__input-radio:checked ~ .form__label-radio .form__button-radio::after {
+    opacity: 1; }
 
 .header {
   position: relative;
@@ -467,6 +511,127 @@ body {
   float: left; }
   [class^="col-"]:not(:last-child) {
     margin-right: 6rem; }
+
+.footer {
+  padding: 8rem 0;
+  background-color: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.footer-logo {
+  margin-bottom: 5rem; }
+  .footer-logo__img {
+    width: 120px;
+    height: 151px; }
+
+.footer-nav__menu {
+  list-style: none;
+  display: flex;
+  flex-direction: row; }
+.footer-nav__item:not(:last-child) {
+  margin-right: 5rem; }
+.footer-nav__item a {
+  text-decoration: none;
+  color: #777777;
+  display: inline-block;
+  transition: all 0.3s; }
+  .footer-nav__item a:hover {
+    transform: rotate(5deg) scale(1.2);
+    color: #A14F03;
+    text-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3); }
+
+.navigation__toggle {
+  display: none; }
+.navigation__icon {
+  position: relative;
+  margin-top: 40px; }
+  .navigation__icon, .navigation__icon::after, .navigation__icon::before {
+    width: 30px;
+    height: 2px;
+    background: #000000;
+    display: inline-block; }
+  .navigation__icon::before, .navigation__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 0.2s; }
+  .navigation__icon::before {
+    top: -8px; }
+  .navigation__icon::after {
+    top: 8px; }
+.navigation__button:hover .navigation__icon::before {
+  top: -10px; }
+.navigation__button:hover .navigation__icon::after {
+  top: 10px; }
+.navigation__button {
+  text-align: center;
+  background: #FAFAFA;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 150;
+  top: 9rem;
+  right: 9rem;
+  cursor: pointer; }
+.navigation__background {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: #A14F03;
+  position: fixed;
+  z-index: 100;
+  top: 9rem;
+  right: 9.5rem;
+  transition: all 0.5s ease-in-out; }
+.navigation__nav {
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 110;
+  opacity: 0;
+  transition: all 0.5s ease-in-out; }
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none; }
+.navigation__item:not(:last-child) {
+  margin-bottom: 5rem;
+  text-align: center; }
+.navigation__link:link, .navigation__link:visited {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 4rem;
+  line-height: 4.8rem;
+  letter-spacing: 0.5rem;
+  color: #FAFAFA;
+  padding: 1rem 2rem;
+  background: linear-gradient(120deg, transparent 0%, transparent 50%, #FAFAFA 50%);
+  background-size: 220%;
+  transition: all 0.4s;
+  display: inline-block; }
+.navigation__link:hover, .navigation__link:active {
+  background-position: 100%;
+  color: #A14F03;
+  transform: translateX(1rem); }
+.navigation__toggle:checked ~ .navigation__background {
+  transform: scale(150); }
+.navigation__toggle:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%; }
+.navigation__toggle:checked + .navigation__button .navigation__icon {
+  background: transparent; }
+.navigation__toggle:checked + .navigation__button .navigation__icon::before {
+  transform: rotate(135deg);
+  top: 0; }
+.navigation__toggle:checked + .navigation__button .navigation__icon::after {
+  transform: rotate(-135deg);
+  top: 0; }
 
 .section-about {
   padding-top: 8rem; }
