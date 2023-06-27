@@ -3,10 +3,10 @@
     display: none
   &__icon
     position: relative
-    margin-top: 40px
+    margin-top: 4rem
     &, &::after, &::before
-      width: 30px
-      height: 2px
+      width: 3rem
+      height: .2rem
       background: $color-black
       display: inline-block
     &::before, &::after
@@ -15,13 +15,13 @@
       left: 0
       transition: all .2s
     &::before
-      top: -8px
+      top: -0.8rem
     &::after
-      top: 8px
+      top: 0.8rem
   &__button:hover &__icon::before
-    top: -10px
+    top: -1rem
   &__button:hover &__icon::after
-    top: 10px
+    top: 1rem
   &__button
     text-align: center
     background: $color-white
@@ -33,6 +33,9 @@
     top: 9rem
     right: 9rem
     cursor: pointer
+    @include responsed(tab-port)
+      box-shadow: $box-shadow
+
   &__background
     width: 7rem
     height: 7rem

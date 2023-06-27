@@ -14,6 +14,11 @@
     z-index: 5
     box-shadow: $box-shadow
     border: none
+    @include responsed(tab-land)
+      font-size: 1.6rem
+      padding: 1.2rem 3rem
+    @include responsed(tab-port)
+      padding: 1.5rem 4rem
   &_form
     &, &:link, &:visited
       background-color: $color-brown-dark

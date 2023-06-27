@@ -7,6 +7,10 @@ body
 .title-first
   color: $color-white
   margin-bottom: 6.5rem
+  @include responsed(tab-land)
+    margin-bottom: 3.5rem
+  @include responsed(tab-port)
+    margin-bottom: 2rem
   span
     display: block
   &__main
@@ -20,6 +24,12 @@ body
     animation-duration: 2s
     animation-delay: 1s
     backface-visibility: hidden
+    @include responsed(tab-land)
+      font-size: 4rem
+    @include responsed(tab-port)
+      font-size: 3rem
+      letter-spacing: .5rem
+      margin-bottom: 0
   &__second
     font-size: 4rem
     line-height: 4.8rem
@@ -29,7 +39,11 @@ body
     animation-duration: 2s
     animation-delay: 1s
     backface-visibility: hidden
-
+    @include responsed(tab-land)
+      font-size: 3.5rem
+    @include responsed(tab-port)
+      font-size: 2.5rem
+      letter-spacing: .3rem
 .title-second
   text-align: center
   font-weight: 800
@@ -45,8 +59,16 @@ body
   text-shadow: $box-shadow
   position: relative
   z-index: 5
+  @include responsed(tab-land)
+    font-size: 3rem
+  @include responsed(tab-port)
+    margin-bottom: 4rem
+    letter-spacing: .5rem
   &_form
-    text-align: left
+    text-align: center
+    @include responsed(tab-port)
+    font-size: 2.5rem
+    margin: 0 auto
   &:hover
     transform: skewY(2deg) skewX(15deg) scale(1.1)
   &_white
@@ -57,9 +79,13 @@ body
   line-height: 2.4rem
   letter-spacing: .2rem
   text-transform: uppercase
+  @include responsed(tab-land)
+    font-size: 1.8rem
 
 .paragraph
   font-weight: 400
   font-size: $font-size-paragraph
   line-height: 2.2rem
   letter-spacing: .2rem
+  @include responsed(tab-land)
+    font-size: 1.5rem

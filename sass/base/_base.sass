@@ -4,11 +4,21 @@
   box-sizing: border-box
 
 html
-  font-size: 10px
+  font-size: 62.5%
+  @include responsed(tab-land)
+    font-size: 56.25%
+  @include responsed(tab-port)
+    font-size: 50%
+  @include responsed(phone)
+    font-size: 30%
+  @include responsed(big-screen)
+    font-size: 75%
 body
-  
+
   background-color: white
   padding: 5rem
+  @include responsed(phone)
+    padding: 0
 
 .container
   background-color: #f7f7f7

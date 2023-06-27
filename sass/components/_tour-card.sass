@@ -4,12 +4,19 @@
   -moz-perspective: 150rem
   position: relative
   border-radius: 0.3rem
+  @media only screen and ( max-width: 900px ), (hover:none)
+    height: auto
   &__backSide-box
     text-align: center
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
+    @media only screen and ( max-width: 600px ), (hover:none)
+      position: relative
+      top: 0
+      left: 0
+      transform: translate(0%, 0%)
   &__text
     color: $color-white
     margin-bottom: 8rem
@@ -25,7 +32,7 @@
       letter-spacing: .2rem
   &__span
     background: linear-gradient(156.85deg, $color-brown-light 3.65%, $color-brown-dark 100%)
-    padding: 1rem 2rem .3rem 2rem
+    padding: .7rem 2rem .3rem 2rem
     &_1
       z-index: 2
     &_2
@@ -33,10 +40,14 @@
       top: 3.4rem
       right: 0
       padding-bottom: 1rem
+      @include responsed(tab-port)
+        position: relative
   &__img
     height: 21rem
     background-blend-mode: hard-light
     clip-path: polygon(0 1%, 100% 0, 100% 100%, 0 85%)
+    @media only screen and ( max-width: 600px ), (hover:none)
+      height: 30rem
   &__img_1
     background: $color-brown-light url('../img/tour-card1.jpg') center/cover no-repeat
   &__img_2
@@ -55,6 +66,9 @@
     position: absolute
     top: 17rem
     right: 0
+    @include responsed(tab-port)
+      top: 26rem
+      font-size: 3.6rem
   &__descr
     ul
       list-style: none
@@ -67,6 +81,8 @@
         text-decoration-line: underline
         &:not(:last-child)
           margin-bottom: 2rem
+        @include responsed(tab-land)
+          font-size: 1.5rem
 
   &__side
     height: 52rem
@@ -76,15 +92,27 @@
     top: 0
     left: 0
     backface-visibility: hidden
+    @media only screen and ( max-width: 900px ), (hover:none)
+      height: auto
+      position: relative
     &_front
       background: #FFFFFF
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 15px 40px rgba(0, 0, 0, 0.15)
-
+      @media only screen and ( max-width: 600px ), (hover:none)
+        padding-bottom: 11rem
     &_back
       background: linear-gradient(156.85deg, $color-brown-light 3.65%, $color-brown-dark 100%)
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 15px 40px rgba(0, 0, 0, 0.15)
       transform: rotateY(180deg)
+      @media only screen and ( max-width: 900px ), (hover:none)
+        transform: rotateY(0deg)
+        padding: 5rem
+        padding-top: 12rem
+        margin-top: -10rem
+        clip-path: polygon(0 0%, 100% 20%, 100% 100%, 0 100%)
   &:hover &__side_front
     transform: rotateY(-180deg)
+    @media only screen and ( max-width: 600px ), (hover:none)
+      transform: rotateY(0deg)
   &:hover &__side_back
     transform: rotateY(0deg)
